@@ -519,9 +519,6 @@ export class ProgressEngine {
     const elapsed = Date.now() - this.startTime;
     const remaining = (this.totalDuration - elapsed) / 1000; // 转换为秒
     
-    // 基于当前步骤计算更精确的时间
-    const currentStepRemaining = this.calculateStepRemainingTime(percentage);
-    
     if (remaining < 60) {
       return `${Math.ceil(remaining)}秒`;
     } else if (remaining < 3600) {
